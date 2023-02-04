@@ -1,0 +1,41 @@
+@use '../global/' as global;
+
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #FFFFFF;
+  border: 2px solid #C9C9C9;
+  border-radius: 10px;
+  padding-top: 37px;
+  padding-right: 25px;
+  padding-left: 30px;
+}
+
+.card__ttl {
+  text-align: center;
+  font-size: 24px;
+  font-weight: global.$font-weight-bold;
+}
+
+.card__body {
+  
+}
+
+.card__txt {
+  margin-top: 35px;
+  font-weight: global.$font-weight-bold;
+  line-height: calc(38 / 16);
+  overflow-wrap: break-word;
+  word-break: keep-all;
+}
+
+.card__img {
+  text-align: center;
+  margin-top: 63px;
+
+  img {
+    width: calc(185 / 320 * 100%);
+  }
+}

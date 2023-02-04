@@ -1,0 +1,44 @@
+@use '../global/' as global;
+
+
+.hero {
+  height: calc(100vh - global.$layout-height-header-pc);
+  background-image: url("../img/fv.png");
+  background-position: center right 20%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include global.mq('sp') {
+    height: calc(100vh - global.$layout-height-header-sp);
+  }
+}
+
+.hero__ttl {
+  writing-mode: vertical-rl;
+  padding-top: calc(133 / 1080 * 100vh);
+  padding-left: 11%;
+}
+
+.hero__ttl-line {
+  display: block;
+  background-color: #FFFFFF;
+  font-size: calc(28 / 1080 * 100vh);
+  font-weight: global.$font-weight-bold;
+  padding-top: 0.8em;
+  padding-right: 1em;
+  padding-bottom: 2.3em;
+  padding-left: 1em;
+  letter-spacing: 0.22em;
+
+  & + & {
+    margin-right: 2.9em;
+
+    @include global.mq('sp') {
+      margin-right: 2em;
+    }
+  }
+}
+
+.hero__ttl-accent {
+  color: global.$color-main;
+}

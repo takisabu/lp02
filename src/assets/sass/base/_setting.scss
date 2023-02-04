@@ -45,10 +45,10 @@ html, body {
 }
 
 body {
-  font-family: global.$font-ja;
+  font-family: global.$font-base;
   font-weight: global.$font-weight-base;
   line-height: global.$line-height-base;
   color: global.$color-txt-base;
   background-color: global.$color-bg-base;
-  font-size: 16px;
+  font-size: global.$font-size-base;
 }

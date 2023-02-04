@@ -1,0 +1,84 @@
+@use '../global/' as global;
+
+
+.header {
+  height: global.$layout-height-header-pc;
+
+  @include global.mq('sp') {
+    height: global.$layout-height-header-sp;
+  }
+}
+
+.header__inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: calc(global.$layout-width-header + global.$layout-padding-side-pc * 2);
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 30px;
+  padding-right: global.$layout-padding-side-pc;
+  padding-left: global.$layout-padding-side-pc;
+
+  @include global.mq('sp') {
+    flex-direction: column;
+    align-items: center;
+    padding-right: global.$layout-padding-side-sp;
+    padding-left: global.$layout-padding-side-sp;
+  }
+}
+
+.header__logo {
+  margin-left: 22px;
+
+  @include global.mq('sp') {
+    margin-left: 0;
+  }
+
+  img {
+    width: 263px;
+
+    @include global.mq('sp') {
+      width: 200px;
+    }
+  }
+}
+
+.header__info {
+  text-align: right;
+  margin-right: 22px;
+
+  @include global.mq('sp') {
+    margin-top: 20px;
+    margin-right: 0;
+    text-align: center;
+  }
+}
+
+.header__time {
+  font-size: 14px;
+}
+
+.header__phone {
+  position: relative;
+  display: inline-block;
+  color: global.$color-main;
+  font-size: 24px;
+  font-weight: global.$font-weight-bold;
+  margin-top: 5px;
+  padding-left: 28px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 24px;
+    height: 24px;
+    top: 58%;
+    left: 0;
+    transform: translateY(-50%);
+    background-image: url("../img/phone.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}

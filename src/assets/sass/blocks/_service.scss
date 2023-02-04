@@ -1,0 +1,40 @@
+@use '../global/' as global;
+
+
+.service {
+  padding-top: 75px;
+}
+
+.service__ttl {
+  text-align: center;
+}
+
+.service__message {
+  text-align: center;
+  margin-top: 65px;
+}
+
+.service__cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 33px;
+
+  @include global.mq('tab') {
+    flex-direction: column;
+  }
+}
+
+.service__card {
+  width: calc(380 / 1180 * 100%);
+
+  @include global.mq('tab') {
+    width: 100%;
+  }
+
+  & + & {
+    @include global.mq('tab') {
+      margin-top: 50px;
+    }
+  }
+}
