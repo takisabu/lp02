@@ -1,0 +1,124 @@
+@use '../global/' as global;
+
+
+.footer {
+  padding-top: 200px;
+  padding-bottom: 160px;
+
+  @include global.mq('tab') {
+    padding-top: 100px;
+  }
+}
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: calc(608 / 1180 * 100%) 1fr;
+  max-width: calc(global.$layout-width-footer + global.$layout-padding-side-pc * 2);
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: global.$layout-padding-side-pc;
+  padding-left: global.$layout-padding-side-pc;
+
+  @include global.mq('tab') {
+    display: block;
+  }
+
+  @include global.mq('sp') {
+    padding-right: global.$layout-padding-side-sp;
+    padding-left: global.$layout-padding-side-sp;
+  }
+}
+
+.footer__content {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+  margin-left: 34px;
+
+  @include global.mq('tab') {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+.footer__img {
+  img {
+    width: 263px;
+    max-width: 100%;
+  }
+}
+
+.footer__info {
+  display: flex;
+  flex-direction: row;
+  margin-top: 25px;
+
+  @include global.mq('tab') {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.footer__post {
+
+}
+
+.footer__address {
+  margin-left: 15px;
+}
+
+.footer__phone {
+  position: relative;
+  display: inline-block;
+  color: global.$color-main;
+  font-size: 24px;
+  font-weight: global.$font-weight-bold;
+  margin-top: 20px;
+  padding-left: 33px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 24px;
+    height: 24px;
+    top: 58%;
+    left: 4px;
+    transform: translateY(-50%);
+    background-image: url("../img/phone.svg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.footer__hours {
+  margin-top: 26px;
+}
+
+.footer__map {
+  position: relative;
+  grid-row: 1 / 3;
+  grid-column: 1 / 2;
+  width: 100%;
+  padding-top: calc(440 / 608 * 100%);
+
+  > iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+}
+
+.footer__copy {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+  font-size: 11px;
+  text-align: right;
+  margin-top: 15px;
+
+  @include global.mq('tab') {
+    text-align: center;
+  }
+}

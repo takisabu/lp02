@@ -1,0 +1,47 @@
+@use '../global/' as global;
+
+
+.message {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 162px;
+  padding-bottom: 82px;
+
+  @include global.mq('tab') {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.message__content {
+  width: calc(446 / 1180 * 100%);
+  padding-top: 25px;
+  padding-left: 31px;
+
+  @include global.mq('tab') {
+    width: 100%;
+    padding-left: 0;
+  }
+}
+
+.message__ttl {
+  @include global.mq('tab') {
+    text-align: center;
+  }
+}
+
+.message__txt {
+  margin-top: 28px;
+  line-height: calc(38 / 16);
+}
+
+.message__img {
+  width: calc(690 / 1180 * 100%);
+  border-radius: 10px;
+
+  @include global.mq('tab') {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
